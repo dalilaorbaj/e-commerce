@@ -2,6 +2,8 @@ import React from 'react';
 
 
 const Hero = () => {
+	return (
+
     <>
 <div className="hero">
 				<div className="container">
@@ -15,7 +17,7 @@ const Hero = () => {
 						</div>
 						<div className="col-lg-7">
 							<div className="hero-img-wrap">
-								<img src="images/couch.png" className="img-fluid" alt="couch"/>
+								<img src={require('../images/couch.png')}  className="img-fluid" alt="couch"/>
 							</div>
 						</div>
 					</div>
@@ -24,7 +26,7 @@ const Hero = () => {
 
 </>
 
-
+	)
 
 }
 

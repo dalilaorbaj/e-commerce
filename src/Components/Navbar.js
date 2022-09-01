@@ -2,6 +2,8 @@ import React from 'react';
 
 
 const Navbar = () => {
+    return (
+
     <>
 <nav className="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
 
@@ -25,8 +27,8 @@ const Navbar = () => {
         </ul>
 
         <ul className="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-            <li><p className="nav-link" ><img src="images/user.svg"  alt="alt" /></p></li>
-            <li><p className="nav-link" ><img src="images/cart.svg"  alt="alt" /></p></li>
+            <li><p className="nav-link" ><img src={require('../images/user.svg').default}/></p></li>
+            <li><p className="nav-link" ><img src={require('../images/cart.svg').default}/></p></li>
         </ul>
     </div>
 </div>
@@ -34,6 +36,8 @@ const Navbar = () => {
 </nav>
 
 </>
+    )
+
 }
 
 export default Navbar;
