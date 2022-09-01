@@ -17,11 +17,11 @@ const Nosotros = () => {
             </div> 
 
             <div className="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-                <a className="product-item" href="cart">
+                <a className="product-item" href="details">
                     <img src={require('../images/product-1.png')}  className="img-fluid product-thumbnail" alt="alt" />
                     <h3 className="product-title">Nordic Chair</h3>
                     <strong className="product-price">$50.00</strong>
-                    <Link to="/cart">
+                    <Link to="/details">
                     <span className="icon-cross">
                         <img src={require('../images/cross.svg').default} className="img-fluid"  alt="alt" />
                     </span>
@@ -30,11 +30,11 @@ const Nosotros = () => {
             </div> 
 
             <div className="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-                <a className="product-item" href="cart">
+                <a className="product-item" href="details">
                     <img src={require('../images/product-2.png')} className="img-fluid product-thumbnail" alt="alt"  />
                     <h3 className="product-title">Kruzo Aero Chair</h3>
                     <strong className="product-price">$78.00</strong>
-                    <Link to="/cart">
+                    <Link to="/details">
 
                     <span className="icon-cross">
                         <img src={require('../images/cross.svg').default} className="img-fluid"  alt="alt" />
@@ -45,11 +45,11 @@ const Nosotros = () => {
             </div>
 
             <div className="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-                <a className="product-item" href="cart">
+                <a className="product-item" href="details">
                     <img src={require('../images/product-3.png')} className="img-fluid product-thumbnail" alt="alt"  />
                     <h3 className="product-title">Ergonomic Chair</h3>
                     <strong className="product-price">$43.00</strong>
-                    <Link to="/cart">
+                    <Link to="/details">
 
                     <span className="icon-cross">
                         <img src={require('../images/cross.svg').default} className="img-fluid"  alt="alt" />

@@ -1,9 +1,8 @@
 import CarritoHero from '../Components/CarritoHero';
 import Navbar from '../Components/Navbar';
-import Footer from '../Components/Footer';
+import FooterWOSofa from '../Components/FooterWOSofa';
 import Cart from '../Components/Cart';
 import React from 'react';
-import Nosotros from '../Components/Nosotros'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 
@@ -13,7 +12,7 @@ const Carrito = () => {
         <Navbar />
         <CarritoHero />
         <Cart />
-        <Footer />
+        <FooterWOSofa />
     </div>  
     )
 }

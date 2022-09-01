@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link} from "react-router-dom";
 
 
 const Navbar = () => {
@@ -8,7 +9,7 @@ const Navbar = () => {
 <nav className="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
 
 <div className="container">
-    <a className="navbar-brand" href="index.html">Furni<span>.</span></a>
+    <a className="navbar-brand" href="/">Furni<span>.</span></a>
 
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
@@ -17,7 +18,7 @@ const Navbar = () => {
     <div className="collapse navbar-collapse" id="navbarsFurni">
         <ul className="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
             <li className="nav-item active">
-                <a className="nav-link" href="index.html">Casa</a>
+                <a className="nav-link" href="/">Casa</a>
             </li>
             <li><a className="nav-link" href="shop.html">Comprar</a></li>
             <li><a className="nav-link" href="about.html">Sobre nosotros</a></li>
@@ -28,7 +29,10 @@ const Navbar = () => {
 
         <ul className="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
             <li><p className="nav-link" ><img src={require('../images/user.svg').default}/></p></li>
+            <Link to="/cart">
             <li><p className="nav-link" ><img src={require('../images/cart.svg').default}/></p></li>
+
+            </Link>
         </ul>
     </div>
 </div>

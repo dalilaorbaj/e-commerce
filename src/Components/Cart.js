@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link} from "react-router-dom";
 
 
 const Cart = () => {
@@ -24,7 +25,9 @@ const Cart = () => {
                       <tbody>
                         <tr>
                           <td className="product-thumbnail">
+                          <Link to="/details">
                             <img src={require('../images/product-1.png')} alt="Image" className="img-fluid" />
+                            </Link>
                           </td>
                           <td className="product-name">
                             <h2 className="h5 text-black">Product 1</h2>
@@ -47,7 +50,10 @@ const Cart = () => {
         
                         <tr>
                           <td className="product-thumbnail">
+                          <Link to="/details">
+
                             <img src={require('../images/product-2.png')} alt="Image" className="img-fluid" />
+                            </Link>
                           </td>
                           <td className="product-name">
                             <h2 className="h5 text-black">Product 2</h2>
