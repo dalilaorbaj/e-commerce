@@ -5,11 +5,11 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 
-const Detalles = () => {
+const Detalles = (producto) => {
     return (  
     <div className='App'>
         <Navbar />
-        <Product />
+        <Product producto={producto}/>
         <FooterWOSofa />
     </div>  
     )
