@@ -1,13 +1,13 @@
 import React from 'react';
 
-function Product(producto) {
+const Product = (producto) => {
 
     const {imagen, titulo, descripcion, precio} = producto;
     return (
     <>
         <div className='detailsPage mt-5 mb-5' id="garden">
             <div className='primera' style={{marginTop: "10%", marginBottom: "10%"}}>
-                <img src={require({imagen})} alt="Image" className="img-fluid" />
+                <img src={require({imagen})} className="img-fluid" alt=""/>
             </div>
             <div className='segunda' style={{textAlign: "left", marginBottom: "10%", marginTop: "10%"}}>
                 <h1 className="mb-3" style={{color: "#3b5d50"}}>{titulo}</h1>

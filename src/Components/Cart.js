@@ -34,7 +34,7 @@ const Cart = () => {
                           </td>
                           <td>$49.00</td>
                           <td>
-                            <div className="input-group mb-3 d-flex align-items-center quantity-container" style={{maxWidth: "120px;"}}>
+                            <div className="input-group mb-3 d-flex align-items-center quantity-container" style={{maxWidth: "120px"}}>
                               <div className="input-group-prepend">
                                 <button className="btn btn-outline-black decrease" type="button">&minus;</button>
                               </div>
@@ -60,7 +60,7 @@ const Cart = () => {
                           </td>
                           <td>$49.00</td>
                           <td>
-                            <div className="input-group mb-3 d-flex align-items-center quantity-container" style={{maxWidth: "120px;"}}>
+                            <div className="input-group mb-3 d-flex align-items-center quantity-container" style={{maxWidth: "120px"}}>
                               <div className="input-group-prepend">
                                 <button className="btn btn-outline-black decrease" type="button">&minus;</button>
                               </div>
@@ -127,7 +127,7 @@ const Cart = () => {
         
                       <div className="row">
                         <div className="col-md-12">
-                          <button className="btn btn-black btn-lg py-3 btn-block" onclick="window.location='checkout.html'">Proceed To Checkout</button>
+                          <button className="btn btn-black btn-lg py-3 btn-block" onClick="window.location='checkout.html'">Proceed To Checkout</button>
                         </div>
                       </div>
                     </div>
