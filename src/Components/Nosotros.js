@@ -1,18 +1,10 @@
 import React from 'react';
 import { ProductoShape } from '../Shapes';
 import CardProduct from './CardProduct'
+import { arrayOf } from 'prop-types';
 
 
-
-const productos = [
-    { imagen: "'../images/product-1.png'", titulo: "Nordic chair", descripcion: "Como base, lleva una estructura metálica muy resistente, con acabado en negro. La silla está tapizada en poliéster suave y se puede adquirir en varios colores alegres, que aportarán un toque desenfadado y único a tu salón.", precio: 15499 },
-    { imagen: "'../images/product-2.png'", titulo: "Kruzo Aero Chair", descripcion: "Como base, lleva una estructura metálica muy resistente, con acabado en negro. La silla está tapizada en poliéster suave y se puede adquirir en varios colores alegres, que aportarán un toque desenfadado y único a tu salón.", precio: 11299 },
-    { imagen: "'../images/product-3.png'", titulo: "Ergonomic Chair", descripcion: "Como base, lleva una estructura metálica muy resistente, con acabado en negro. La silla está tapizada en poliéster suave y se puede adquirir en varios colores alegres, que aportarán un toque desenfadado y único a tu salón.", precio: 18599 },
-
-]
-
-
-const Nosotros = () => {
+const Nosotros = ({productos}) => {
     return (
         <div className="product-section">
             <div className="container">
@@ -26,7 +18,7 @@ const Nosotros = () => {
 
                     {productos.map((producto) => {
                         return (
-                            <CardProduct imagen={producto.imagen} titulo={producto.titulo} precio={producto.precio} />
+                            <CardProduct producto={producto} key={producto.id}/>
                         )
                         
                     })}
@@ -38,6 +30,6 @@ const Nosotros = () => {
 }
 
 Nosotros.propTypes = {
-    producto: ProductoShape
+    productos: arrayOf(ProductoShape)
 }
 export default Nosotros;

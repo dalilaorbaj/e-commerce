@@ -28,9 +28,9 @@ const Navbar = () => {
         </ul>
 
         <ul className="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-            <li><p className="nav-link" ><img src={require('../images/user.svg').default}/></p></li>
+            <li><p className="nav-link" ><img src={'images/user.svg'.default}/></p></li>
             <Link to="/cart">
-            <li><p className="nav-link" ><img src={require('../images/cart.svg').default}/></p></li>
+            <li><p className="nav-link" ><img src={'images/cart.svg'.default}/></p></li>
 
             </Link>
         </ul>

@@ -9,13 +9,13 @@ const Footer = () => {
 			<div className="container relative">
 
 				<div className="sofa-img">
-					<img src={require('../images/sofa.png')} className="img-fluid" alt="sofa"/>
+					<img src={'images/sofa.png'} className="img-fluid" alt="sofa"/>
 				</div>
 
 				<div className="row">
 					<div className="col-lg-8">
 						<div className="subscription-form">
-							<h3 className="d-flex align-items-center"><span className="me-1"><img src={require('../images/envelope-outline.svg').default} alt="envelope" className="img-fluid" /></span><span>Suscribite a nuestro Newsletter</span></h3>
+							<h3 className="d-flex align-items-center"><span className="me-1"><img src={'images/envelope-outline.svg'.default} alt="envelope" className="img-fluid" /></span><span>Suscribite a nuestro Newsletter</span></h3>
 
 							<form action="#" className="row g-3">
 								<div className="col-auto">
@@ -26,7 +26,7 @@ const Footer = () => {
 								</div>
 								<div className="col-auto">
 									<button className="btn btn-primary" style={{backgroundColor:"white"}}>
-									<img src={require('../images/paper-plane.png')} className="img-fluid"  style={{width: "25px"}}/>
+									<img src={'images/paper-plane.png'} className="img-fluid"  style={{width: "25px"}}/>
 									</button>
 								</div>
 							</form>

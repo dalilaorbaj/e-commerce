@@ -6,6 +6,8 @@ import Nosotros from '../Components/Nosotros'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 import Slider from '../Components/Slider';
+import productos from '../data' // simula datos
+
 
 
 const Home = () => {
@@ -13,7 +15,7 @@ const Home = () => {
     <div className='App'>
         <Navbar />
         <Hero />
-        <Nosotros />
+        <Nosotros productos={productos}/>
         <Slider />
         <Footer />
     </div>  
