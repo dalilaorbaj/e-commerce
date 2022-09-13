@@ -231,8 +231,8 @@
   }
    .btn:hover {
 	   color: #fff;
-	   background: #222;
-	   border-color: #222;
+	   background: rgb(92, 92, 92);
+	   border-color: rgb(146, 146, 146);
   }
    .btn:active, .btn:focus {
 	   outline: none !important;
@@ -821,5 +821,23 @@
 	   background: rgba(59, 93, 80, .2);
   }
   
+
+  #garden{
+	display: grid;
+	grid-template-columns: 50% 50%;
+	grid-template-rows: 100%;
+  }
+
+  .primera{
+	grid-column-start:1;
+	grid-row-start:1;
+	text-align: center;
+  
+  }
+  
+  .segunda{
+	grid-column-start:2;
+	grid-row-start:1;
+  }
   
   
