@@ -53,7 +53,6 @@
 	   text-decoration: none;
 	   transition: 0.3s all ease;
 	   color: #2f2f2f;
-	   text-decoration: underline;
   }
    a:hover {
 	   color: #2f2f2f;
@@ -532,7 +531,7 @@ box-shadow: 6px 10px 5px 0px rgba(0,0,0,0.75);
 	   position: absolute;
 	   width: 58px;
 	   height: 58px;
-	   line-height: 58px;
+	   /**/line-height: 58px;
 	   border-radius: 50%;
 	   background: rgba(59, 93, 80, .1);
 	   color: #2f2f2f;

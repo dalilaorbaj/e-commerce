@@ -1,45 +1,53 @@
-import React from 'react';
-import { Link} from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from "react-router-dom";
+import { BsCart } from "react-icons/bs";
+
 
 
 const Navbar = () => {
+    const location = useLocation()
+    const [pathname, setPathname] = useState("")
+
+    useEffect(() => {
+        setPathname(location.pathname)
+    }, [location])
+
+
     return (
 
-    <>
-<nav className="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
+        <>
+            <nav className="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
 
-<div className="container">
-    <a className="navbar-brand" href="/">Furni<span>.</span></a>
+                <div className="container">
+                    <Link to='/' className="navbar-brand">Furni<span>.</span></Link>
 
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-    </button>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
 
-    <div className="collapse navbar-collapse" id="navbarsFurni">
-        <ul className="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-            <li className="nav-item active">
-                <a className="nav-link" href="/">Casa</a>
-            </li>
-            <li><a className="nav-link" href="shop.html">Comprar</a></li>
-            <li><a className="nav-link" href="about.html">Sobre nosotros</a></li>
-            <li><a className="nav-link" href="services.html">Servicios</a></li>
-            <li><a className="nav-link" href="blog.html">Blog</a></li>
-            <li><a className="nav-link" href="contact.html">Contactanos</a></li>
-        </ul>
+                    <div className="collapse navbar-collapse" id="navbarsFurni">
+                        <ul className="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+                            <Link to="/">
+                                <li><a className={`nav-link ${pathname === "/" ? "active" : ""}`}>Casa</a></li>
+                            </Link>
+                            <li><a className={`nav-link ${pathname === "/shop" ? "active" : ""}`} href="shop.html">Comprar</a></li>
+                            <li><a className={`nav-link ${pathname === "/about" ? "active" : ""}`} href="about.html">Sobre nosotros</a></li>
+                            <li><a className={`nav-link ${pathname === "/services" ? "active" : ""}`} href="services.html">Servicios</a></li>
+                            <li><a className={`nav-link ${pathname === "/blog" ? "active" : ""}`} href="blog.html">Blog</a></li>
+                            <li><a className={`nav-link ${pathname === "/contact" ? "active" : ""}`} href="contact.html">Contactanos</a></li>
+                            <Link to="/cart">
+                                <li className={`nav-link ${pathname === "/cart" ? "active" : ""}`}> <BsCart size={20} style={{ marginTop: -5 }} /></li>
+                            </Link>
+                        </ul>
 
-        <ul className="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-            <li><p className="nav-link" ><img src={'images/user.svg'.default}/></p></li>
-            <Link to="/cart">
-            <li><p className="nav-link" ><img src={'images/cart.svg'.default}/></p></li>
 
-            </Link>
-        </ul>
-    </div>
-</div>
-    
-</nav>
 
-</>
+                    </div>
+                </div>
+
+            </nav>
+
+        </>
     )
 
 }

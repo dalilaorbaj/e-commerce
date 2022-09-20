@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import { CartContext } from '../Context/cartContext';
+
 
 function Product({producto}) {
+    const {agregarProducto} = useContext(CartContext);
 
-    const {imagen, titulo, descripcion, precio} = producto;
+    const {id, imagen, titulo, descripcion, precio} = producto;
     return (
     <>
         <div className='detailsPage mt-5 mb-5' id="garden">
@@ -13,7 +16,7 @@ function Product({producto}) {
                 <h1 className="mb-3" style={{color: "#3b5d50"}}>{titulo}</h1>
                 <h4 className="mr-5 ml-5 mb-3" style={{color: "Gray", fontWeight: "lighter", marginRight: "10%"}}>{descripcion}</h4>
                 <b><h1 style={{color: "#3b5d50", fontWeight: "bolder", marginBottom: "5%"}}>${precio}</h1></b>
-                <button className="btn btn-outline-black" type="button">Agregar al carrito</button>
+                <button className="btn btn-outline-black" type="button" onClick={()=>agregarProducto(id)}>Agregar al carrito</button>
             </div>
         </div>
     </>

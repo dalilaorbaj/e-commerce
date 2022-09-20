@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { ProductoShape } from '../Shapes';
 import CardProduct from './CardProduct'
 import { arrayOf } from 'prop-types';
+import { ProductContext } from '../Context/productsContext';
 
 
-const Nosotros = ({productos}) => {
+const Nosotros = () => {
+    const productos = useContext(ProductContext);
+
     return (
         <div className="product-section">
             <div className="container">
@@ -14,14 +17,18 @@ const Nosotros = ({productos}) => {
                         <h2 className="mb-4 section-title">Crafted with excellent material.</h2>
                         <p className="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. </p>
                         <p><a href="shop.html" className="btn">Explore</a></p>
+                        {console.log(productos)}
                     </div>
 
                     {productos.map((producto) => {
                         return (
-                            <CardProduct producto={producto} key={producto.id}/>
+                            <CardProduct producto={producto} key={producto.id} />
+
                         )
-                        
+
                     })}
+
+
 
                 </div>
             </div>
