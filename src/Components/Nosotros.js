@@ -6,7 +6,7 @@ import { ProductContext } from '../Context/productsContext';
 
 
 const Nosotros = () => {
-    const productos = useContext(ProductContext);
+    const {productos} = useContext(ProductContext);
 
     return (
         <div className="product-section">

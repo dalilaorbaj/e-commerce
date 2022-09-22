@@ -1,4 +1,4 @@
-import { React, createContext, useEffect, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import App from '../App'
 import productosArray from '../data';
  
@@ -7,7 +7,7 @@ import productosArray from '../data';
 
 export const CartContext = createContext()
 
-export const ProductProvider = ({ children }) => {
+export const CartProvider = ({ children }) => {
     
     const [productos, setProductos] = useState(productosArray)
 

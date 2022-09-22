@@ -209,7 +209,7 @@
 	   position: absolute;
 	   width: 255px;
 	   height: 217px;
-	   background-image: url("../public/images/dots-light.svg");
+	  /* background-image: url("../public/images/dots-light.svg");*/
 	   background-size: contain;
 	   background-repeat: no-repeat;
 	   right: -100px;
@@ -351,7 +351,7 @@ box-shadow: 6px 10px 5px 0px rgba(0,0,0,0.75);
 	   position: absolute;
 	   width: 255px;
 	   height: 217px;
-	   background-image: url("../public/images/dots-yellow.svg");
+	   /*background-image: url("../public/images/dots-yellow.svg");*/
 	   background-repeat: no-repeat;
 	   background-size: contain;
 	   transform: translate(-40%, -40%);
@@ -398,7 +398,7 @@ box-shadow: 6px 10px 5px 0px rgba(0,0,0,0.75);
 	   position: absolute;
 	   width: 255px;
 	   height: 217px;
-	   background-image: url("../public/images/dots-green.svg");
+	  /* background-image: url("../public/images/dots-green.svg");*/
 	   background-size: contain;
 	   background-repeat: no-repeat;
 	   transform: translate(-40%, -40%);
