@@ -4,7 +4,11 @@ import Articulo from "./Articulo";
 import { CartContext } from '../Context/cartContext';
 
 const Cart = () => {
-  const {carrito, agregarProducto, restarProducto} = useContext(CartContext);
+  const {carrito, getTotalCarrito} = useContext(CartContext);
+
+  // TODO: Implementar getTotalCarrito() usando un state y un useEffect.
+  // El useState guarda en una var totalCarrito.
+  // un use effect observa sobre carrito y renueva la variable totalCarrito
 
   return (
 

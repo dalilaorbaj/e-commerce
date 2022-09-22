@@ -7,8 +7,8 @@ import productos from '../data';
 
 
 const Articulo = ({ prod }) => {
-  const { agregarProducto, restarProducto, eliminarProducto } = useContext(CartContext);
-  const productoCompleto = productos.find((item) => item.id === prod.id);
+  const { agregarProducto, restarProducto, eliminarProducto, getProductoByID } = useContext(CartContext);
+  const productoCompleto = getProductoByID(prod.id)
   const [total, setTotal] = useState(0);
 
 
