@@ -17,7 +17,6 @@ const Nosotros = () => {
                         <h2 className="mb-4 section-title">Crafted with excellent material.</h2>
                         <p className="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. </p>
                         <p><a href="shop.html" className="btn">Explore</a></p>
-                        {console.log(productos)}
                     </div>
 
                     {productos.map((producto) => {

@@ -11,7 +11,6 @@ import productos from '../data' // simula datos
 const Detalles = () => {
     let { id } = useParams();
     const prodFiltrado = productos.filter(product => product.id === parseInt(id))[0]
-    console.log(prodFiltrado);
     return (  
     <div className='App'>
         <Navbar />
