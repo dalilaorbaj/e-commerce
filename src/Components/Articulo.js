@@ -14,9 +14,8 @@ const Articulo = ({ prod }) => {
 
   useEffect(() => {
     setTotal(productoCompleto.precio * prod.cantidad);
-    agregarProducto(prod.id);
-    console.log(total, productoCompleto);
   },[])
+
   const handleAgregar = () => {
     agregarProducto(prod.id);
     setTotal(productoCompleto.precio * prod.cantidad);
@@ -44,7 +43,7 @@ const Articulo = ({ prod }) => {
             <div className="input-group-prepend">
               <button className="btn btn-outline-black decrease" onClick={() => handleRestar()} type="button">&minus;</button>
           </div>
-          <input type="text" className="form-control text-center quantity-amount" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" />
+          <input type="text" className="form-control text-center quantity-amount disabled" placeholder={prod.cantidad} aria-label="Example text with button addon" aria-describedby="button-addon1" />
           <div className="input-group-append">
             <button className="btn btn-outline-black increase" onClick={() => handleAgregar()} type="button">+</button>
           </div>
