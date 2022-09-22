@@ -8,7 +8,7 @@ export const CartContext = createContext()
 
 export const CartProvider = ({ children }) => {
 
-    const [carrito, setCarrito] = useState([{id: 1, cantidad: 3}, {id: 2, cantidad: 1}])
+    const [carrito, setCarrito] = useState([{id: 1, cantidad: 3}, {id: 2, cantidad: 2}])
 
     const agregarProducto = async (id) => {
         const myProducto = carrito.find((item) => item.id === id)

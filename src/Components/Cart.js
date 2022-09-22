@@ -6,10 +6,6 @@ import { CartContext } from '../Context/cartContext';
 const Cart = () => {
   const {carrito, agregarProducto, restarProducto} = useContext(CartContext);
 
-  useEffect(() => {
-    console.log(carrito);
-  }, [carrito]);
-
   return (
 
     <>
