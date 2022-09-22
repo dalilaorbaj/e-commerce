@@ -1,52 +1,68 @@
-
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
+import { CartContext } from '../Context/cartContext';
+import { ProductoShape } from '../Shapes';
+import productos from '../data';
 
-const Articulo = (prod) => {
 
-  const [value, setValue] = useState(1)
 
-  let sumar = () =>{
-    console.log(value)
-    setValue(value + 1)
+const Articulo = ({ prod }) => {
+  const { agregarProducto, restarProducto, eliminarProducto, getProductoByID } = useContext(CartContext);
+  const productoCompleto = getProductoByID(prod.id)
+  const [total, setTotal] = useState(0);
+
+
+  useEffect(() => {
+    setTotal(productoCompleto.precio * prod.cantidad);
+  },[])
+
+  const handleAgregar = () => {
+    agregarProducto(prod.id);
+    setTotal(productoCompleto.precio * prod.cantidad);
   }
-
-  let restar = () =>{
-    console.log(value)
-    setValue(value - 1)
+  const handleRestar = () => {
+    restarProducto(prod.id)
+    setTotal(productoCompleto.precio * prod.cantidad);
   }
+  const handleEliminar = () => {
+    eliminarProducto(prod.id);
+    
+  }
+  return (
+    <>
+      <tr>
+        <td className="product-thumbnail">
+          <Link to="/details">
+            <img src={productoCompleto.imagen} alt="Image" className="img-fluid" />
+          </Link>
+        </td>
 
-  return(
-<>
-                        <tr>
-                          <td className="product-thumbnail">
-                          <Link to="/details">
-                            <img src='images/product-1.png' alt="Image" className="img-fluid" />
-                          </Link>
-                          </td>
-                          <td className="product-name">
-                            <h2 className="h5 text-black">Nordic chair</h2>
-                          </td>
-                          <td>$49.00</td>
-                          <td>
-                            <div className="input-group mb-3 d-flex align-items-center quantity-container">
-                              <div className="input-group-prepend">
-                                <button className="btn btn-outline-black decrease" onClick={()=> restar()} type="button">&minus;</button>
-                              </div>
-                              <input type="text" className="form-control text-center quantity-amount" value={value} onChange={e => setValue(e.target.value)}placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" />
-                              <div className="input-group-append">
-                                <button className="btn btn-outline-black increase" onClick={()=> sumar()} type="button">+</button>
-                              </div>
-                            </div>
-                          </td>        
-                          <td>${49.00 * value}.00</td>
-                          <td><a href="#" className="btn btn-black btn-sm">X</a></td>
-                        </tr>
-                        
-                    </>
+        <td className="product-name">
+          <h2 className="h5 text-black">{productoCompleto.titulo}</h2>
+        </td>
+        <td>${productoCompleto.precio}</td>
+        <td>
+          <div className="input-group mb-3 d-flex align-items-center quantity-container">
+            <div className="input-group-prepend">
+              <button className="btn btn-outline-black decrease" onClick={() => handleRestar()} type="button">&minus;</button>
+          </div>
+          <input type="text" className="form-control text-center quantity-amount disabled" placeholder={prod.cantidad} aria-label="Example text with button addon" aria-describedby="button-addon1" />
+          <div className="input-group-append">
+            <button className="btn btn-outline-black increase" onClick={() => handleAgregar()} type="button">+</button>
+          </div>
+        </div>
+      </td>
+      <td>${total}</td>
+      <td><a href="#" className="btn btn-black btn-sm" onClick={() => handleEliminar()}>X</a></td>
+    </tr>
+
+    </>
   );
-           
-  
+
+}
+
+Articulo.propTypes = {
+  prod: ProductoShape
 }
 
 export default Articulo;

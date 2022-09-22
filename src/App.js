@@ -6,10 +6,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import './App.css';
 import React from 'react'
-import { ProductProvider } from './Context/cartContext';
+import { CartProvider } from './Context/cartContext';
+import {ProductProvider} from './Context/productsContext'
 
 function App() {
   return (
+    <CartProvider>
     <ProductProvider>
       <BrowserRouter>
       <Routes>          
@@ -18,7 +20,8 @@ function App() {
           <Route path="/details/:id" element={<Detalles />} />
           </Routes>
       </BrowserRouter>
-      </ProductProvider>   
+      </ProductProvider>
+      </CartProvider>   
  
   );
 }
