@@ -10,7 +10,12 @@ export const CartProvider = ({ children }) => {
 
     const [carrito, setCarrito] = useState([])
 
-    const agregarProducto = async (id) => {
+    const eliminarProducto = (id) => {
+        const nuevoCarrito =  carrito.filter((prod) => prod.id !== id)
+        setCarrito(nuevoCarrito)
+    }
+
+    const agregarProducto = (id) => {
         const myProducto = carrito.find((item) => item.id === id)
         if (myProducto !== undefined) {
             myProducto.cantidad += 1;
@@ -37,7 +42,7 @@ export const CartProvider = ({ children }) => {
 
 
     return (
-        <CartContext.Provider value={{ agregarProducto, restarProducto, carrito }}>
+        <CartContext.Provider value={{ eliminarProducto, agregarProducto, restarProducto, carrito }}>
             {children}
         </CartContext.Provider>
     )

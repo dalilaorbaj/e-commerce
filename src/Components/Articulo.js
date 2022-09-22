@@ -7,7 +7,7 @@ import productos from '../data';
 
 
 const Articulo = ({ prod }) => {
-  const { agregarProducto, restarProducto } = useContext(CartContext);
+  const { agregarProducto, restarProducto, eliminarProducto } = useContext(CartContext);
   const productoCompleto = productos.find((item) => item.id === prod.id);
   const [total, setTotal] = useState(0);
 
@@ -24,7 +24,10 @@ const Articulo = ({ prod }) => {
     restarProducto(prod.id)
     setTotal(productoCompleto.precio * prod.cantidad);
   }
-
+  const handleEliminar = () => {
+    eliminarProducto(prod.id);
+    
+  }
   return (
     <>
       <tr>
@@ -50,7 +53,7 @@ const Articulo = ({ prod }) => {
         </div>
       </td>
       <td>${total}</td>
-      <td><a href="#" className="btn btn-black btn-sm">X</a></td>
+      <td><a href="#" className="btn btn-black btn-sm" onClick={() => handleEliminar()}>X</a></td>
     </tr>
 
     </>
