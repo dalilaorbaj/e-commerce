@@ -2,6 +2,7 @@
 import Home from './Pages/Home'
 import Carrito from './Pages/Carrito'
 import Detalles from './Pages/Detalles'
+import Shop from './Pages/Shop'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import './App.css';
@@ -18,6 +19,7 @@ function App() {
         <Route index path="/" element={<Home />} />
           <Route path="/cart" element={<Carrito />} />
           <Route path="/details/:id" element={<Detalles />} />
+          <Route path="/shop" element={<Shop />} />
           </Routes>
       </BrowserRouter>
       </ProductProvider>

@@ -19,7 +19,7 @@ const Nosotros = () => {
                         <p><a href="shop.html" className="btn">Explore</a></p>
                     </div>
 
-                    {productos.map((producto) => {
+                    {productos.slice(0, 3).map((producto) => {
                         return (
                             <CardProduct producto={producto} key={producto.id} />
 

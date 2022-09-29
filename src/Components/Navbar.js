@@ -30,7 +30,9 @@ const Navbar = () => {
                             <Link to="/">
                                 <li><a className={`nav-link ${pathname === "/" ? "active" : ""}`}>Casa</a></li>
                             </Link>
-                            <li><a className={`nav-link ${pathname === "/shop" ? "active" : ""}`} href="shop.html">Comprar</a></li>
+                            <Link to="/shop">                            
+                            <li><a className={`nav-link ${pathname === "/shop" ? "active" : ""}`}>Comprar</a></li>
+                            </Link>
                             <li><a className={`nav-link ${pathname === "/about" ? "active" : ""}`} href="about.html">Sobre nosotros</a></li>
                             <li><a className={`nav-link ${pathname === "/services" ? "active" : ""}`} href="services.html">Servicios</a></li>
                             <li><a className={`nav-link ${pathname === "/blog" ? "active" : ""}`} href="blog.html">Blog</a></li>
