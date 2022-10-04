@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { Link, useLocation } from "react-router-dom";
 import { BsCart } from "react-icons/bs";
-
+import { CartContext } from '../Context/cartContext';
 
 
 const Navbar = () => {
@@ -11,6 +11,9 @@ const Navbar = () => {
     useEffect(() => {
         setPathname(location.pathname)
     }, [location])
+
+    const { cantidadTot } = useContext(CartContext);
+
 
 
     return (
@@ -38,7 +41,7 @@ const Navbar = () => {
                             <li><a className={`nav-link ${pathname === "/blog" ? "active" : ""}`} href="blog.html">Blog</a></li>
                             <li><a className={`nav-link ${pathname === "/contact" ? "active" : ""}`} href="contact.html">Contactanos</a></li>
                             <Link to="/cart">
-                                <li className={`nav-link ${pathname === "/cart" ? "active" : ""}`}> <BsCart size={20} style={{ marginTop: -5 }} /></li>
+                                <li className={`nav-link ${pathname === "/cart" ? "active" : ""}`}> <BsCart size={20} style={{ marginTop: -5 }} /> <a >{cantidadTot}</a></li>
                             </Link>
                         </ul>
 
