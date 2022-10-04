@@ -3,7 +3,6 @@ import { CartContext } from '../Context/cartContext';
 
 // snackbar 
 import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 

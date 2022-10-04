@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import { CartContext } from '../Context/cartContext';
 import { ProductoShape } from '../Shapes';
-import productos from '../data';
 
 
 
@@ -33,7 +32,7 @@ const Articulo = ({ prod }) => {
       <tr>
         <td className="product-thumbnail">
           <Link to="/details">
-            <img src={productoCompleto.imagen} alt="Image" className="img-fluid" />
+            <img src={productoCompleto.imagen} alt="prodCompleto" className="img-fluid" />
           </Link>
         </td>
 
