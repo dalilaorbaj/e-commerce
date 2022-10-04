@@ -10,6 +10,7 @@ const CardProduct = ({ producto }) => {
                 <Link to={`/details/${id}`} className="product-item">
                 <img src={imagen} className="img-fluid product-thumbnail" alt={imagen} />
                 <h3 className="product-title">{titulo}</h3>
+
                 <strong className="product-price">${precio}</strong>
                     <span className="icon-cross">
                         <img src={Cross} className="img-fluid" alt="alt" />
