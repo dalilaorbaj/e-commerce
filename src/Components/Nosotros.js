@@ -3,6 +3,8 @@ import { ProductoShape } from '../Shapes';
 import CardProduct from './CardProduct'
 import { arrayOf } from 'prop-types';
 import { ProductContext } from '../Context/productsContext';
+import { Link } from "react-router-dom";
+
 
 
 const Nosotros = () => {
@@ -16,7 +18,8 @@ const Nosotros = () => {
                     <div className="col-md-12 col-lg-3 mb-5 mb-lg-0">
                         <h2 className="mb-4 section-title">Crafted with excellent material.</h2>
                         <p className="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. </p>
-                        <p><a href="shop.html" className="btn">Explore</a></p>
+                        <Link to="/shop"> <p><a href="shop.html" className="btn">Explore</a></p> </Link>
+
                     </div>
 
                     {productos.slice(0, 3).map((producto) => {

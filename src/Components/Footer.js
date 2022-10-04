@@ -26,7 +26,7 @@ const Footer = () => {
 								</div>
 								<div className="col-auto">
 									<button className="btn btn-primary" style={{backgroundColor:"white"}}>
-									<img src={'images/paper-plane.png'} className="img-fluid"  style={{width: "25px"}}/>
+									<img src={'images/paper-plane.png'} className="img-fluid"  alt='avioncito de papel' style={{width: "25px"}}/>
 									</button>
 								</div>
 							</form>
