@@ -12,10 +12,14 @@ export const CartProvider = ({ children }) => {
     useEffect(() => {
         let x = localStorage.getItem("carrito")
         setCarrito(JSON.parse(x))
+        let y = localStorage.getItem("cantidadTot")
+        setCantidadTot(JSON.parse(y))
+
     }, []);
 
       useEffect(() => {
           localStorage.setItem("carrito", JSON.stringify(carrito));
+          localStorage.setItem("cantidadTot", JSON.stringify(cantidadTot))
       }, [carrito]);
 
 
