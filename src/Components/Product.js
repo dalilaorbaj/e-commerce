@@ -13,10 +13,6 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 function Product({ producto }) {
     const { agregarProducto, carrito, cantidadTot } = useContext(CartContext);
 
-    console.log('carro', carrito);
-
-    console.log('tot baby', cantidadTot);
-
     const { id, imagen, titulo, descripcion, precio } = producto;
 
     const [open, setOpen] = useState(false);

@@ -1,17 +1,24 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useState, useEffect } from 'react'
 import productos from '../data';
-
-
-/*aca en realidad habria que usar los productos del productsContext*/
 
 export const CartContext = createContext()
 
-
 export const CartProvider = ({ children }) => {
 
-    const [carrito, setCarrito] = useState([])
-    
+    const [carrito, setCarrito] = useState([])    
+
     const [cantidadTot, setCantidadTot] = useState(0)
+
+    useEffect(() => {
+        let x = localStorage.getItem("carrito")
+        setCarrito(JSON.parse(x))
+    }, []);
+
+      useEffect(() => {
+          localStorage.setItem("carrito", JSON.stringify(carrito));
+      }, [carrito]);
+
+
 
     const getProductoByID = (id) => {
         return productos.find((item) => item.id === id);
@@ -23,6 +30,7 @@ export const CartProvider = ({ children }) => {
         carrito.map((item) => {
             const precioItem = getProductoByID(item.id).precio 
             total += precioItem * item.cantidad
+            return total
         })
         return total
     }
@@ -31,7 +39,6 @@ export const CartProvider = ({ children }) => {
         const cantProductosAEliminar =  carrito.filter((prod) => prod.id === id)
         const nuevoCarrito =  carrito.filter((prod) => prod.id !== id)
         setCarrito(nuevoCarrito)
-        console.log(cantidadTot, cantProductosAEliminar);
         setCantidadTot(cantidadTot - cantProductosAEliminar[0].cantidad)
     }
 
